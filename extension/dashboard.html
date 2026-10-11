@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>bookieMonster</title>
+  <link rel="icon" href="icons/icon32.png">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <header class="masthead">
+    <img src="icons/icon48.png" alt="" width="40" height="40">
+    <div>
+      <h1>bookieMonster</h1>
+      <p class="sub" id="account">Checking x.com session…</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="status" id="status-panel">
+      <p class="label">Status</p>
+      <p class="status-line" id="status-line">Loading…</p>
+      <p class="status-detail" id="status-detail"></p>
+    </section>
+
+    <section class="stats">
+      <div><p class="label">Bookmarks</p><p class="num" id="stat-bookmarks">—</p></div>
+      <div><p class="label">In a folder</p><p class="num" id="stat-filed">—</p></div>
+      <div><p class="label">Folders</p><p class="num" id="stat-folders">—</p></div>
+      <div><p class="label">Unavailable</p><p class="num" id="stat-unavailable">—</p></div>
+      <div><p class="label">Removed</p><p class="num" id="stat-removed">—</p></div>
+    </section>
+
+    <section class="actions">
+      <button id="btn-sync" class="primary">Sync now</button>
+      <button id="btn-save">Save files now</button>
+      <button id="btn-download">Download archive JSON</button>
+      <button id="btn-folder">Open Downloads folder</button>
+    </section>
+
+    <div class="columns">
+      <section>
+        <h2>Folders</h2>
+        <table class="folders">
+          <thead><tr><th>Folder</th><th class="r">Bookmarks</th></tr></thead>
+          <tbody id="folder-rows"><tr><td colspan="2" class="muted">No folders yet.</td></tr></tbody>
+        </table>
+
+        <h2>Settings</h2>
+        <label class="row">
+          <span>Check for new bookmarks every</span>
+          <select id="set-interval">
+            <option value="5">5 minutes</option>
+            <option value="10">10 minutes</option>
+            <option value="15">15 minutes</option>
+            <option value="30">30 minutes</option>
+            <option value="60">60 minutes</option>
+          </select>
+        </label>
+        <label class="row">
+          <input type="checkbox" id="set-autosave">
+          <span>Save files to <code>Downloads/bookieMonster/</code> after every change</span>
+        </label>
+        <p class="note">Bookmark activity on x.com in this browser also triggers a sync within seconds.</p>
+      </section>
+
+      <section>
+        <h2>Activity</h2>
+        <ol class="log" id="log"></ol>
+      </section>
+    </div>
+  </main>
+
+  <script type="module" src="dashboard.js"></script>
+</body>
+</html>

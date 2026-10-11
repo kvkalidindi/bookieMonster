@@ -1,0 +1,11 @@
+node_modules/
+dist/
+# Personal data and secrets never belong in the repository.
+*.state.json
+x_bookmarks_state.json
+bookieMonster_*.json
+xarchive_*.json
+bookmarks.jsonl
+bookmarks_*.md
+*.log
+.env
